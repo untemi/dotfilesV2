@@ -52,11 +52,6 @@ input 0:14373:USB_OPTICAL_MOUSE {
   pointer_accel -0.3
 }
 
-input 6392:3993:USB_OPTICAL_MOUSE {
-  accel_profile "flat"
-  pointer_accel 0
-}
-
 input 2:8:AlpsPS/2_ALPS_GlidePoint {
   events disabled_on_external_mouse
   tap enabled

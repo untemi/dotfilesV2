@@ -13,6 +13,7 @@ return {
   },
 
   { "github/copilot.vim", enabled = false, lazy = false },
+  { "jvgrootveld/telescope-zoxide", lazy = false },
 
   {
     "nvim-tree/nvim-tree.lua",
