@@ -30,6 +30,7 @@ return {
         "hyprlang",
         "jinja",
         "jinja_inline",
+        "comment",
       },
     },
   },

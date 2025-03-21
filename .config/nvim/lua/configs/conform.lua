@@ -1,14 +1,15 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { "prettier" },
-    html = { "prettier", "rustywind" },
+    css = { "prettierd" },
+    json = { "prettierd" },
+    html = { "prettierd", "rustywind" },
     go = { "gofumpt", "goimports-reviser", "golines" },
-    templ = { "templ", "rustywind" },
+    templ = { "templ", "injected", "injected" },
     toml = { "taplo" },
     yaml = { "yamlfmt" },
-    sql = { "sqruff" },
     python = { "ruff" },
+    rust = { "rustfmt" },
   },
 
   format_on_save = {

@@ -12,7 +12,13 @@ return {
     end,
   },
 
-  { "github/copilot.vim", enabled = false, lazy = false },
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
+  },
+
   { "jvgrootveld/telescope-zoxide", lazy = false },
 
   {

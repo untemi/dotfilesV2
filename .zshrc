@@ -73,13 +73,8 @@ godoc() {
 upall() {
   echo "\033[38;5;10m--- PacMan ---\033[0m"
   yay --noconfirm
-  echo "\n\033[38;5;10m--- PacMan CleanUp ---\033[0m"
-  yay -Sc --noconfirm
   echo "\n\033[38;5;10m--- Flatpak Update ---\033[0m"
   flatpak update --noninteractive
-  echo "\n\033[38;5;10m--- Flatpak CleanUp ---\033[0m"
-  flatpak uninstall --unused --noninteractive
-  flatpak uninstall --delete-data --noninteractive
   echo "\n\033[38;5;10m--- AppImage Update ---\033[0m"
   imgup
   echo "\n\033[38;5;10m--- Yazi plugins Update ---\033[0m"
@@ -90,6 +85,14 @@ upall() {
   echo "..."
   nvim --headless "+Lazy! sync" +qa >/dev/null 2>&1
   echo "done"
+}
+
+clean(){
+  echo "\n\033[38;5;10m--- Flatpak CleanUp ---\033[0m"
+  flatpak uninstall --unused --noninteractive
+  flatpak uninstall --delete-data --noninteractive
+  echo "\n\033[38;5;10m--- PacMan CleanUp ---\033[0m"
+  yay -Sc --noconfirm
 }
 
 apt() {

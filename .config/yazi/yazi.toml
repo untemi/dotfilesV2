@@ -19,6 +19,6 @@ prepend_previewers = [
   { name = "*.md", run = "glow" },
   { mime = "audio/*", run = "exifaudio" },
 ]
-prepend_fetchers = [
-  { id = "mime", name = "*", run = "mime-ext", prio = "high" },
-]
+# prepend_fetchers = [
+#   { id = "mime", name = "*", run = "mime-ext", prio = "high" },
+# ]

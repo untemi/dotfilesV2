@@ -21,6 +21,7 @@ local options = {
     },
 
     tabufline = {
+      lazyload = false,
       enabled = true,
       order = { "treeOffset", "buffers" },
     },

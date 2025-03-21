@@ -775,7 +775,7 @@ button.osd:disabled {
 
 button.suggested-action {
   background-color: #7aa2f7;
-  color: #A9B1D6;
+  color: #16161e;
   box-shadow: inset 0 0 0 9999px transparent, 0 3px 2px -3px rgba(0, 0, 0, 0.3), 0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 

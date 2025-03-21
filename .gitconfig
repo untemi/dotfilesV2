@@ -1,3 +1,5 @@
 [user]
 	email = 94703538+andro404-MC@users.noreply.github.com
 	name = untemi
+[push]
+	autoSetupRemote = true
