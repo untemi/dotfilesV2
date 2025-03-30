@@ -1,4 +1,4 @@
-## Variablesswa
+## Variables
 set $mod Mod4
 set $left h
 set $down j
@@ -203,7 +203,7 @@ for_window [class="Vivaldi-stable"] move to workspace 1
 for_window [app_id="thunderbird"] move to workspace 10
 
 for_window [app_id="firefox"] border none
-for_window [app_id="zen-alpha"] border none
+for_window [app_id="zen"] border none
 for_window [app_id="thunderbird"] border none
 for_window [app_id="brave-browser"] border none
 for_window [app_id="vivaldi-stable"] border none
@@ -224,9 +224,9 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] \
     floating enable, move position 740 390, sticky enable
 
 ## Zen
-for_window [app_id="zen-alpha" title="Library"] floating enable
+for_window [app_id="zen" title="Library"] floating enable
 for_window [title = "About Zen Browser"] floating enable
-for_window [app_id="zen-alpha" title="^Picture-in-Picture$"] \
+for_window [app_id="zen" title="^Picture-in-Picture$"] \
     floating enable, move position 740 390, sticky enable
 
 ## Steam

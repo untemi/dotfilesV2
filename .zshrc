@@ -60,6 +60,7 @@ alias imgup="~/.local/appimage/appimageupdatetool-x86_64.AppImage ~/.local/appim
 alias x="chmod +x"
 alias py="python"
 alias pyenv="source .venv/bin/activate"
+alias rswatch="cargo watch -w src/ -x 'run -q'"
 
 # Functions
 keyb() {
@@ -68,6 +69,14 @@ keyb() {
 
 godoc() {
   curl curl -s cht.sh/go/{$1}
+}
+
+clean(){
+  echo "\n\033[38;5;10m--- Flatpak CleanUp ---\033[0m"
+  flatpak uninstall --unused --noninteractive
+  flatpak uninstall --delete-data --noninteractive
+  echo "\n\033[38;5;10m--- PacMan CleanUp ---\033[0m"
+  yay -Sc --noconfirm
 }
 
 upall() {
@@ -84,15 +93,9 @@ upall() {
   echo "\n\033[38;5;10m--- Nvchad Update ---\033[0m"
   echo "..."
   nvim --headless "+Lazy! sync" +qa >/dev/null 2>&1
+  echo "\033[38;5;10m--- CleanUP ---\033[0m"
+  clean
   echo "done"
-}
-
-clean(){
-  echo "\n\033[38;5;10m--- Flatpak CleanUp ---\033[0m"
-  flatpak uninstall --unused --noninteractive
-  flatpak uninstall --delete-data --noninteractive
-  echo "\n\033[38;5;10m--- PacMan CleanUp ---\033[0m"
-  yay -Sc --noconfirm
 }
 
 apt() {
