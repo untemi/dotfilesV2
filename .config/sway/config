@@ -13,7 +13,8 @@ set $EXPLORER nemo
 set $VIDEO mpv
 set $IMAGE imv
 set $BROWSER vivaldi
-set $MENU echo -n "show" | socat - UNIX-CONNECT:/tmp/sherlock_daemon.socket
+set $MENU echo -n "show" | socat - UNIX-CONNECT:/home/untemi/.cache/albert/ipc_socket
+# set $MENU echo -n "show" | socat - UNIX-CONNECT:/tmp/sherlock_daemon.socket
 
 set $laptop eDP-1 
 
