@@ -33,8 +33,8 @@ element-icon, element-text, scrollbar {
 window {
   location : northwest;
   width    : 280px;
-  x-offset : 7px;
-  y-offset : 33px;
+  x-offset : 4px;
+  y-offset : 26px;
 
   background-color: @bg1;
   border: 1px;
@@ -84,6 +84,10 @@ element normal urgent {
 }
 
 element normal active {
+  text-color: @accent;
+}
+
+element alternate active {
   text-color: @accent;
 }
 
