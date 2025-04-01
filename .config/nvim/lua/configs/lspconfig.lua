@@ -14,6 +14,7 @@ local servers = {
   "rust_analyzer",
   "hyprls",
   "pyright",
+  "slint_lsp",
 }
 
 -- lsps with default config

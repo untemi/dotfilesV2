@@ -13,7 +13,7 @@ set $EXPLORER nemo
 set $VIDEO mpv
 set $IMAGE imv
 set $BROWSER vivaldi
-set $MENU albert show
+set $MENU echo -n "show" | socat - UNIX-CONNECT:/tmp/sherlock_daemon.socket
 
 set $laptop eDP-1 
 
@@ -183,6 +183,7 @@ exec swayosd-server
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec albert
+exec sherlock
 exec nm-applet
 exec udiskie -t
 # exec vesktop --start-minimized
