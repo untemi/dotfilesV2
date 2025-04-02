@@ -12,3 +12,5 @@ export npm_config_prefix=$HOME/.local
 export WINEPREFIX=$HOME/Games/Wines/Staging
 
 export EDITOR=nvim
+
+export $(envsubst < $HOME/.sercrets)
