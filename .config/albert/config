@@ -1,5 +1,4 @@
 [General]
-frontend=widgetsboxmodel
 showTray=false
 telemetry=false
 
@@ -111,3 +110,14 @@ lightTheme=Default System Palette
 quitOnClose=false
 showCentered=true
 systemShadow=false
+
+[widgetsboxmodel-ng]
+alwaysOnTop=true
+clearOnHide=true
+displayScrollbar=false
+followCursor=true
+hideOnFocusLoss=true
+historySearch=true
+itemCount=5
+quitOnClose=false
+showCentered=true
