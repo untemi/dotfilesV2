@@ -84,7 +84,7 @@ enabled=false
 enabled=false
 
 [timer]
-enabled=true
+enabled=false
 
 [timezones]
 enabled=false

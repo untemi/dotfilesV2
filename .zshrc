@@ -30,8 +30,8 @@ source "$HOME/.local/share/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.z
 source "$HOME/.local/share/zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
 
 # History in cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=10000000
+SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 
 # Alias
