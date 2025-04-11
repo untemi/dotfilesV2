@@ -10,17 +10,17 @@ hash = "a6b78bf9af5390e3a85a6951fbb7b93"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "9a09505"
+rev = "a1738e8"
 hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:max-preview"
-rev = "9a09505"
+rev = "a1738e8"
 hash = "a8025f2bb311e869069364fba01abffc"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mime-ext"
-rev = "9a09505"
+rev = "a1738e8"
 hash = "5e24c167e9ae9a203a48f2a438b8c705"
 
 [[flavor.deps]]

@@ -266,6 +266,5 @@ for_window [title=""] title_format "."
 
 ## Sticky
 for_window [app_id="dragon-drop"] sticky toggle
-for_window [app_id="albert"] sticky toggle
 
 include /etc/sway/config.d/*

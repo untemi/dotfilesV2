@@ -4,6 +4,8 @@ local options = {
     theme = "tokyonight",
   },
 
+  mason = { skip = { "rust-analyzer" } },
+
   ui = {
     cmp = {
       style = "atom",

@@ -8,7 +8,6 @@ cfonts " untemi #!" -a left -f tiny -g "#f7768e","#7aa2f7" --transition-gradient
 
 autoload -Uz compinit
 autoload edit-command-line; zle -N edit-command-line
-# fpath=($HOME/.local/share/zsh-plugins/zsh-completions/src/ $fpath)
 zstyle ":completion:*" menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 compinit
@@ -23,11 +22,11 @@ bindkey -e
 unset VICMD
 
 # Plugins
+source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
 source "$HOME/.local/share/zsh-plugins/sudo-prefix.zsh"
 source "$HOME/.local/share/zsh-plugins/dotenv.zsh"
-source "$HOME/.local/share/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$HOME/.local/share/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$HOME/.local/share/zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
 
 # History in cache directory:
 HISTSIZE=10000000
