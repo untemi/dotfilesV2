@@ -11,14 +11,20 @@ show_symlink = false
 max_width = 800
 max_height = 800
 sixel_fraction = 14
+image_delay = 0
 image_filter = "triangle"
 cache_dir = "~/.cache/yazi/"
 
 [plugin]
 prepend_previewers = [
-  { name = "*.md", run = "glow" },
-  { mime = "audio/*", run = "exifaudio" },
+  { mime = "{audio}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
 ]
+prepend_preloaders = [
+  { mime = "{audio}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+]
+
 # prepend_fetchers = [
 #   { id = "mime", name = "*", run = "mime-ext", prio = "high" },
 # ]

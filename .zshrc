@@ -23,7 +23,7 @@ unset VICMD
 
 # Plugins
 source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 source "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
 source "$HOME/.local/share/zsh-plugins/sudo-prefix.zsh"
 source "$HOME/.local/share/zsh-plugins/dotenv.zsh"
@@ -32,6 +32,10 @@ source "$HOME/.local/share/zsh-plugins/dotenv.zsh"
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+
+# Config autosuggestions
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # Alias
 alias ls="exa --icons -A --group-directories-first"

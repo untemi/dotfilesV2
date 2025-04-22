@@ -3,6 +3,7 @@ local options = {
     lua = { "stylua" },
     css = { "prettierd" },
     json = { "prettierd" },
+    htmldjango = { "prettierd" },
     html = { "prettierd", "rustywind" },
     go = { "gofumpt", "goimports-reviser", "golines" },
     templ = { "templ", "injected" },
