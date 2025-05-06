@@ -2,7 +2,7 @@
 get_notes() {
   curl --silent --request GET \
        --url "https://bbs-api-os.hoyoverse.com/game_record/genshin/api/dailyNote?server=os_euro&role_id=$GENSHIN_UID" \
-       --cookie "ltoken_v2=$GENSHIN_TOKEN; ltuid_v2=$GENSHIN_LTUID;"
+       --cookie "ltoken_v2=$HOYO_TOKEN; ltuid_v2=$HOYO_LTUID;"
 }
 
 resin() {
@@ -13,8 +13,8 @@ resin() {
     return 1
   fi
 
-  CURRENT_RESIN=$(echo "$NOTES" | jq -r '.data.current_resin // "N/A"')
-  MAX_RESIN=$(echo "$NOTES" | jq -r '.data.max_resin // "N/A"')
+  CURRENT_RESIN=$(echo "$NOTES" | jq -r '.data.current_resin // "?"')
+  MAX_RESIN=$(echo "$NOTES" | jq -r '.data.max_resin // "?"')
   TIME_LEFT=$(human-time $(echo "$NOTES" | jq -r '.data.resin_recovery_time // "N/A"'))
 
   # Properly format JSON output with variable expansion

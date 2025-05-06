@@ -45,4 +45,9 @@ return {
       require "configs.lspconfig"
     end,
   },
+
+  {
+    "dundalek/bloat.nvim",
+    cmd = "Bloat",
+  },
 }

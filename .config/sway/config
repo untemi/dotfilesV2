@@ -190,7 +190,7 @@ exec udiskie -t
 # exec vesktop --start-minimized
 # exec flatpak run dev.vencord.Vesktop --start-minimized
 # exec thunderbird
-exec sleep 4 && keepassxc
+exec keepassxc
 
 
 ### Rules but not laws :(

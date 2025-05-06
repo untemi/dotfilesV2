@@ -70,7 +70,7 @@ enabled=false
 enabled=false
 
 [python.unit_converter]
-enabled=true
+enabled=false
 global_handler_enabled=false
 trigger="con "
 

@@ -9,6 +9,7 @@
   "modules-right": [
      //"privacy",
     "gamemode",
+    "custom/hsrpower",
     "custom/genshinresin",
     "battery",
     "disk",
@@ -137,6 +138,13 @@
   "custom/genshinresin": {
     "format": "<span color='#7aa2f7' rise='-500' font='10'>&#xf186;  </span>{}",
     "exec": "~/Scripts/genshin.sh resin",
+    "return-type" : "json",
+    "interval": 200,
+  },
+
+  "custom/hsrpower": {
+    "format": "<span color='#7aa2f7' rise='600' font='10'>  </span>{}",
+    "exec": "~/Scripts/hsr.sh power",
     "return-type" : "json",
     "interval": 200,
   },

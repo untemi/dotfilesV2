@@ -40,3 +40,22 @@ lspconfig.emmet_language_server.setup {
   capabilities = nvlsp.capabilities,
   filetypes = { "html", "templ", "htmldjango" },
 }
+
+lspconfig.tailwindcss.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  settings = {
+    tailwindCSS = {
+      files = {
+        exclude = {
+          "**/.git/**",
+          "**/node_modules/**",
+          "**/.hg/**",
+          "**/.svn/**",
+          "**/target/**",
+        },
+      },
+    },
+  },
+}

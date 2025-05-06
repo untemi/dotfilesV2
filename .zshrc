@@ -64,7 +64,7 @@ alias imgup="~/.local/appimage/appimageupdatetool-x86_64.AppImage ~/.local/appim
 alias x="chmod +x"
 alias py="python"
 alias pyenv="source .venv/bin/activate"
-alias rswatch="cargo watch -w src/ -x 'run -q'"
+alias rswatch="cargo watch -x 'run -q'"
 
 # Functions
 keyb() {
