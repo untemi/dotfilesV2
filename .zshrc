@@ -1,10 +1,9 @@
 # Init
-echo ""
-echo ""
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
-cfonts " untemi #!" -a left -f tiny -g "#f7768e","#7aa2f7" --transition-gradient -s
+# Welcome
+# cfonts " untemi #!" -a left -f tiny -g "#f7768e","#7aa2f7" --transition-gradient -s
 
 autoload -Uz compinit
 autoload edit-command-line; zle -N edit-command-line
@@ -25,7 +24,7 @@ unset VICMD
 source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 source "/usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 source "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
-source "$HOME/.local/share/zsh-plugins/sudo-prefix.zsh"
+source "$HOME/.local/share/zsh-plugins/doas-prefix.zsh"
 source "$HOME/.local/share/zsh-plugins/dotenv.zsh"
 
 # History in cache directory:
@@ -42,8 +41,8 @@ alias ls="exa --icons -A --group-directories-first"
 alias ll="eza -Al --color=always --group-directories-first --git -h"
 alias tree="eza --color=always --icons --tree"
 alias grep="rg"
-alias gtop="sudo intel_gpu_top"
-alias pmu="sudo pacman -Syu"
+alias gtop="doas intel_gpu_top"
+alias pmu="doas pacman -Syu"
 alias c="clear"
 alias myip="curl ip.me"
 alias cd="z"
@@ -56,7 +55,6 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.local/share/dotfiles --work-tree=$
 alias neofetch="fastfetch -c neofetch.jsonc"
 alias wsong="yt-dlp --audio-format mp3 -x"
 alias goclean="\rm /tmp/go-build* -r"
-alias svim="EDITOR=nvim sudo -e"
 alias pyenv="source ~/Development/Python/env/bin/activate"
 alias pyenvrun="~/Development/Python/env/bin/python"
 alias yapa="/usr/bin/ya"
@@ -65,6 +63,7 @@ alias x="chmod +x"
 alias py="python"
 alias pyenv="source .venv/bin/activate"
 alias rswatch="cargo watch -x 'run -q'"
+alias sudo="echo 'stop right there, use doas instead.\n'"
 
 # Functions
 keyb() {
@@ -138,7 +137,7 @@ add-zsh-hook -Uz chpwd chpwd-osc7-pwd
 # Keybinds
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey '^[s' sudo-command-line
+bindkey '^[d' doas-command-line
 bindkey '^[e' edit-command-line 
 
 bindkey '^H' backward-kill-word

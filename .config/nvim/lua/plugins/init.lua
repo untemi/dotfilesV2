@@ -22,6 +22,16 @@ return {
       view = {
         width = 20,
       },
+
+      update_focused_file = {
+        enable = false,
+        update_root = {
+          enable = false,
+        },
+        exclude = false,
+      },
+
+      filters = { custom = { "^.git$" } },
     },
   },
 
