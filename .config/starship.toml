@@ -100,7 +100,7 @@ color_vimcmd_visual = '#d79921'
 [os]
 disabled = false
 style = "fg:color_os"
-format = ' [$symbol]($style)'
+format = '[$symbol]($style)'
 
 [os.symbols]
 Windows = "󰍲"
