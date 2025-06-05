@@ -11,6 +11,7 @@ local servers = {
   "hyprls",
   "pyright",
   "slint_lsp",
+  "gdscript",
 }
 
 vim.lsp.enable(servers)

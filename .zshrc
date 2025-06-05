@@ -11,16 +11,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 autoload -Uz compinit
 autoload edit-command-line; zle -N edit-command-line
-autoload -Uz compinit 
 _comp_options+=(globdots)
 
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-	compinit;
-else
-	compinit -C;
-fi;
-
-compdef -d trash
+zsh-defer compinit;
+zsh-defer compdef -d trash
 
 # ─── Options ──────────────────────────────────────────────────────────────
 
@@ -48,13 +42,12 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # ─── Aliases ──────────────────────────────────────────────────────────────
 
-alias ls="exa --icons -A --group-directories-first"
+alias ls="eza --icons -A --group-directories-first"
 alias ll="eza -Al --color=always --group-directories-first --git -h"
 alias tree="eza --color=always --icons --tree"
 alias grep="rg"
 alias gtop="doas intel_gpu_top"
 alias pmu="doas pacman -Syu"
-alias c="clear"
 alias myip="curl ip.me"
 alias cd="z"
 alias lspkg="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
@@ -73,7 +66,12 @@ alias x="chmod +x"
 alias py="python"
 alias pyenv="source .venv/bin/activate"
 alias rswatch="cargo watch -x 'run -q'"
-alias sudo="echo 'stop right there, use doas instead.\n'"
+alias npm="echo 'stop right there, use pnpm instead.\n'"
+alias wiki="wiki-tui"
+alias nv="nvim"
+
+alias sudo="espeak 'use, fucking, doas, you moron!'"
+alias yay="espeak 'use, fucking, paru, you moron!'"
 
 # ─── Functions ────────────────────────────────────────────────────────────
 
@@ -90,12 +88,12 @@ clean(){
   flatpak uninstall --unused --noninteractive
   flatpak uninstall --delete-data --noninteractive
   echo "\n\033[38;5;10m--- PacMan CleanUp ---\033[0m"
-  yay -Sc --noconfirm
+  paru -Sc --noconfirm
 }
 
 upall() {
   echo "\033[38;5;10m--- PacMan ---\033[0m"
-  yay --noconfirm
+  paru -Syu --noconfirm
   echo "\n\033[38;5;10m--- Flatpak Update ---\033[0m"
   flatpak update --noninteractive
   echo "\n\033[38;5;10m--- AppImage Update ---\033[0m"
@@ -140,6 +138,36 @@ function osc7-pwd() {
     printf '\e]7;file://%s%s\e\' $HOST ${PWD//(#m)([^@-Za-z&-;_~])/%${(l:2::0:)$(([##16]#MATCH))}}
 }
 
+function git-com() {
+  if [[ -z "$1" ]]; then
+    echo "eeh, what the commit called again ??"
+    return
+  fi
+
+  git add -A
+  git commit -am "$1"
+  git push
+}
+
+function git-init() {
+  if [[ -z "$1" ]]; then
+    echo "eeh, what the project called again ??"
+    return
+  fi
+
+  echo "# $1" >> README.md
+  git init
+  git add README.md
+  git commit -m "first commit"
+  git branch -M main
+}
+
+function clear_and_refresh() {
+  clear
+  zle reset-prompt
+}
+zle -N clear_and_refresh
+
 function chpwd-osc7-pwd() {
     (( ZSH_SUBSHELL )) || osc7-pwd
 }
@@ -151,6 +179,7 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[d' doas-command-line
 bindkey '^[e' edit-command-line 
+bindkey '^L' clear_and_refresh
 
 bindkey '^H' backward-kill-word
 bindkey "^[[1;5C" forward-word

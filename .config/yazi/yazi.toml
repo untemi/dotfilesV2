@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 ratio = [2, 3, 6]
 sort_by = "natural"
 sort_sensitive = false
@@ -23,8 +23,8 @@ prepend_previewers = [
 prepend_preloaders = [
   { mime = "{audio}/*", run = "mediainfo" },
   { mime = "application/subrip", run = "mediainfo" },
+
 ]
 
-# prepend_fetchers = [
-#   { id = "mime", name = "*", run = "mime-ext", prio = "high" },
-# ]
+[opener]
+open = [{ run = 'xdg-open "$@"', orphan = true, desc = "Open", for = "unix" }]

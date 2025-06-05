@@ -1,5 +1,33 @@
 return {
   {
+    "mbbill/undotree",
+    cmd = { "UndotreeToggle" },
+  },
+
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+  },
+
+  {
+    "rcarriga/nvim-notify",
+    lazy = false,
+    opts = {
+      render = "wrapped-compact",
+      top_down = false,
+      fps = 60,
+      max_width = 50,
+      on_open = function(win)
+        vim.api.nvim_win_set_config(win, {
+          border = "single",
+        })
+      end,
+    },
+  },
+
+  {
     "mistweaverco/kulala.nvim",
     ft = { "http" },
     opts = {

@@ -13,7 +13,7 @@ set $EXPLORER nemo
 set $VIDEO mpv
 set $IMAGE imv
 set $BROWSER vivaldi
-set $MENU echo -n "show" | socat - UNIX-CONNECT:/home/untemi/.cache/albert/ipc_socket
+set $MENU echo -n '["show"]' | socat - UNIX-CONNECT:/home/$USER/.cache/albert/ipc_socket
 # set $MENU echo -n "show" | socat - UNIX-CONNECT:/tmp/sherlock_daemon.socket
 
 set $laptop eDP-1 
@@ -71,23 +71,26 @@ input 2:8:AlpsPS/2_ALPS_GlidePoint {
 ##### Key bindings #####
 ## Apps
 bindsym $mod+q exec $TERMINAL
+bindsym $mod+a exec quist
 bindsym $mod+SHIFT+q exec $ALTTERMINAL
 bindsym $mod+b exec $BROWSER
-bindsym $mod+n exec $TERMINAL -e ncmpcpp
+bindsym $mod+n exec $TERMINAL -e rmpc
 bindsym $mod+e exec $TERMINAL -e $TERMEXPLORER
 bindsym $mod+Shift+e exec $EXPLORER
 bindsym $mod+p exec ~/.config/rofi/applets/bin/mpd.sh
 bindsym Ctrl+Shift+Escape exec $TERMINAL -e btop
 
+bindsym Shift+print exec ~/.config/rofi/applets/bin/screenshot-hypr.sh
+
 bindsym $mod+space exec $MENU
-bindsym $mod+delete exec pidof wlogout || wlogout -b 5
-bindsym $mod+r exec ~/Scripts/run.sh
+bindsym print exec ~/Scripts/shot.sh
 bindsym $mod+g exec ~/Scripts/gallery.sh
 bindsym $mod+d exec ~/Scripts/driveTool.sh
-bindsym print exec ~/Scripts/shot.sh
-bindsym Shift+print exec ~/.config/rofi/applets/bin/screenshot-hypr.sh
+bindsym $mod+r exec ~/Scripts/run.sh
 bindsym $mod+z exec rofi -show calc -modi calc -no-show-match -no-sort
 bindsym $mod+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+bindsym $mod+x exec bzmenu -l rofi
+bindsym $mod+delete exec pidof wlogout || wlogout -b 5
 
 ### Actions
 # close
