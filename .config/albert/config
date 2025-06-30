@@ -5,6 +5,9 @@ telemetry=false
 [albert]
 global_handler_enabled=false
 
+[application]
+enabled=false
+
 [applications]
 enabled=true
 terminal=footclient
@@ -15,7 +18,7 @@ use_non_localized_name=false
 
 [calculator_qalculate]
 angle_unit=2
-enabled=true
+enabled=false
 
 [docs]
 enabled=false

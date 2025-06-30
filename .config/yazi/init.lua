@@ -2,6 +2,8 @@ require("full-border"):setup({
 	type = ui.Border.PLAIN,
 })
 
+require("git"):setup()
+
 function Status:name()
 	local h = self._tab.current.hovered
 	if not h then

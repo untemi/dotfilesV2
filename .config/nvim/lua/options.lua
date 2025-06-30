@@ -12,3 +12,8 @@ if gdproject then
   io.close(gdproject)
   vim.fn.serverstart "./godothost"
 end
+
+-- HACK: set back terminal cursor
+vim.api.nvim_create_autocmd("VimLeave", {
+  command = "set guicursor=a:hor20",
+})

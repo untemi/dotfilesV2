@@ -14,6 +14,7 @@ sixel_fraction = 14
 image_delay = 0
 image_filter = "triangle"
 cache_dir = "~/.cache/yazi/"
+ueberzug_offset = [0.5, -0.5, -0.5, -0.5]
 
 [plugin]
 prepend_previewers = [
@@ -23,8 +24,12 @@ prepend_previewers = [
 prepend_preloaders = [
   { mime = "{audio}/*", run = "mediainfo" },
   { mime = "application/subrip", run = "mediainfo" },
-
 ]
+prepend_fetchers = [
+  { id = "git", name = "*", run = "git" },
+  { id = "git", name = "*/", run = "git" },
+]
+
 
 [opener]
 open = [{ run = 'xdg-open "$@"', orphan = true, desc = "Open", for = "unix" }]

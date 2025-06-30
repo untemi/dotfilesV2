@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "b12a9ab"
-hash = "1f3dad061209081a6b04dd6ff2cb06c7"
+rev = "2ad42fa"
+hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:max-preview"
@@ -17,6 +17,11 @@ hash = "5e24c167e9ae9a203a48f2a438b8c705"
 use = "boydaihungst/mediainfo"
 rev = "9629b1e"
 hash = "5204b4e2bd238c40fa66cf0a0191f084"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "aeca767"
+hash = "bf6f074cd41ee33c3360341d168f9733"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"

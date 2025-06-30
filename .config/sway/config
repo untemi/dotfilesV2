@@ -187,11 +187,9 @@ exec swayosd-server
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec albert
-# exec sherlock
 exec nm-applet
 exec udiskie -t
-# exec vesktop --start-minimized
-# exec flatpak run dev.vencord.Vesktop --start-minimized
+exec vesktop --start-minimized
 # exec thunderbird
 exec keepassxc
 

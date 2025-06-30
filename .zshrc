@@ -66,12 +66,12 @@ alias x="chmod +x"
 alias py="python"
 alias pyenv="source .venv/bin/activate"
 alias rswatch="cargo watch -x 'run -q'"
-alias npm="echo 'stop right there, use pnpm instead.\n'"
 alias wiki="wiki-tui"
 alias nv="nvim"
 
-alias sudo="espeak 'use, fucking, doas, you moron!'"
-alias yay="espeak 'use, fucking, paru, you moron!'"
+alias npm="espeak 'use, fucking, pnpm, you moron!' --"
+alias sudo="espeak 'use, fucking, doas, you moron!' --"
+alias yay="espeak 'use, fucking, paru, you moron!' --"
 
 # ─── Functions ────────────────────────────────────────────────────────────
 
