@@ -7,7 +7,8 @@
   "modules-center": ["clock", "tray"],
   //"modules-center": ["custom/pingo", "clock", "tray"],
   "modules-right": [
-     //"privacy",
+    "custom/updates",
+    "privacy",
     "gamemode",
     "custom/hsrpower",
     "custom/genshinresin",
@@ -103,7 +104,7 @@
   "privacy": {
     "icon-spacing": 5,
     "icon-size": 12,
-    "transition-duration": 250,
+    "transition-duration": 0,
     "modules": [
       {
         "type": "screenshare",
@@ -111,14 +112,15 @@
         "tooltip-icon-size": 15,
       },
       {
-        "type": "audio-out",
-        "tooltip": true,
-        "tooltip-icon-size": 15,
-      },
-      {
         "type": "audio-in",
         "tooltip": true,
         "tooltip-icon-size": 15,
+      },
+    ],
+    "ignore": [
+      {
+        "type": "audio-in",
+        "name": "ALSA plug-in [AudioRelay]",
       },
     ],
   },
@@ -138,14 +140,25 @@
   "custom/genshinresin": {
     "format": "<span color='#7aa2f7' rise='-500' font='10'>&#xf186;  </span>{}",
     "exec": "~/Scripts/genshin.sh resin",
-    "return-type" : "json",
+    "return-type": "json",
     "interval": 200,
   },
 
   "custom/hsrpower": {
     "format": "<span color='#7aa2f7' rise='600' font='10'>  </span>{}",
     "exec": "~/Scripts/hsr.sh power",
-    "return-type" : "json",
+    "return-type": "json",
     "interval": 200,
+  },
+
+  "custom/updates": {
+    "format": "{} {icon}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󱍷",
+      "updated": "",
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --no-zero-output",
   },
 }

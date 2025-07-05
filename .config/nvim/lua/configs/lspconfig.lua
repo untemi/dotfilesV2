@@ -6,6 +6,7 @@ local servers = {
   "tailwindcss",
   "svelte",
   "templ",
+  "taplo",
   "gopls",
   "rust_analyzer",
   "hyprls",
