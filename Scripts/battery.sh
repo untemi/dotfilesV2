@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 # Get the current battery percentage
 battery_percentage=$(cat /sys/class/power_supply/BAT0/capacity)

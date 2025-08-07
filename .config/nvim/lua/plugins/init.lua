@@ -1,17 +1,32 @@
 return {
+  { import = "nvchad.blink.lazyspec" },
+
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = { { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } },
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+  },
+
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    opts = {},
+    ft = "markdown",
+  },
+
   {
     "rachartier/tiny-code-action.nvim",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
-
       { "nvim-telescope/telescope.nvim" },
       { "ibhagwan/fzf-lua" },
-      {
-        "folke/snacks.nvim",
-        opts = {
-          terminal = {},
-        },
-      },
     },
     event = "LspAttach",
     opts = {},

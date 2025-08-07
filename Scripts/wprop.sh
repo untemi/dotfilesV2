@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 SWAY_TREE=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?)')
 
 # Invoke slurp to let the user select a window

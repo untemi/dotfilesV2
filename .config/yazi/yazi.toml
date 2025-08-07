@@ -12,7 +12,7 @@ max_width = 800
 max_height = 800
 sixel_fraction = 14
 image_delay = 0
-image_filter = "triangle"
+image_filter = "Catmull-Rom"
 cache_dir = "~/.cache/yazi/"
 ueberzug_offset = [0.5, -0.5, -0.5, -0.5]
 

@@ -4,12 +4,11 @@
   "height": 26,
 
   "modules-left": ["sway/workspaces"],
-  "modules-center": ["clock", "tray"],
+  "modules-center": ["custom/updates", "clock", "tray"],
   //"modules-center": ["custom/pingo", "clock", "tray"],
   "modules-right": [
-    "custom/updates",
-    "privacy",
     "gamemode",
+    "privacy",
     "custom/hsrpower",
     "custom/genshinresin",
     "battery",
@@ -152,13 +151,14 @@
   },
 
   "custom/updates": {
-    "format": "{} {icon}",
+    "format": "{icon}",
     "return-type": "json",
     "format-icons": {
-      "has-updates": "󱍷",
+      "has-updates": "<span color='#f7567e'>󱍷 </span>",
       "updated": "",
     },
+
     "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates --no-zero-output",
+    "exec": "waybar-module-pacman-updates --no-zero-output --interval-seconds 900 --color-semver-updates f7567e,9ece6a,7aa2f7,C5C8C6,707880",
   },
 }

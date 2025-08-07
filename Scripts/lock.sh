@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 
 if [[ $XDG_CURRENT_DESKTOP == "Hyprland"  ]]; then

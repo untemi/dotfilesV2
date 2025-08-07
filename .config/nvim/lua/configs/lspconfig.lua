@@ -1,3 +1,7 @@
+if vim.env.NO_LSP then
+  return
+end
+
 require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
@@ -13,6 +17,7 @@ local servers = {
   "pyright",
   "slint_lsp",
   "gdscript",
+  "graphql",
 }
 
 vim.lsp.enable(servers)

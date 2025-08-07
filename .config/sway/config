@@ -14,7 +14,6 @@ set $VIDEO mpv
 set $IMAGE imv
 set $BROWSER vivaldi
 set $MENU echo -n '["show"]' | socat - UNIX-CONNECT:/home/$USER/.cache/albert/ipc_socket
-# set $MENU echo -n "show" | socat - UNIX-CONNECT:/tmp/sherlock_daemon.socket
 
 set $laptop eDP-1 
 
@@ -88,7 +87,7 @@ bindsym $mod+g exec ~/Scripts/gallery.sh
 bindsym $mod+d exec ~/Scripts/driveTool.sh
 bindsym $mod+r exec ~/Scripts/run.sh
 bindsym $mod+z exec rofi -show calc -modi calc -no-show-match -no-sort
-bindsym $mod+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+bindsym $mod+v exec rofi -modi clipboard:~/Scripts/cliphist-rofi.sh -show clipboard
 bindsym $mod+x exec bzmenu -l rofi
 bindsym $mod+delete exec pidof wlogout || wlogout -b 5
 
@@ -180,6 +179,7 @@ exec swayidle lock "pidof lock.sh || ~/Scripts/lock.sh" \
               before-sleep "loginctl lock-session & playerctl pause -a & mpc -q pause"
 
 exec foot -s
+exec atuin daemon
 exec dunst -conf ~/.config/dunst/dunstrc-hypr
 # exec otd-daemon
 exec mpd --no-daemon

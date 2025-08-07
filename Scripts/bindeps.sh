@@ -17,9 +17,9 @@ if ! [ -f "$binpath" ]; then
   exit
 fi
 
-libraries=($(readelf -d $binpath | grep NEEDED | sed -n 's/.*\[\(.*\)\].*/\1/p'))
+libraries=($(readelf -d "$binpath" | grep NEEDED | sed -n 's/.*\[\(.*\)\].*/\1/p'))
 
 for lib in "${libraries[@]}"; do
     echo -e "\n${C_NAVY}Choices for library: $lib ${NO_FORMAT}"
-    pacman -Fq $lib
+    pacman -Fq "$lib"
 done

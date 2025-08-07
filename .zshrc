@@ -1,6 +1,6 @@
 # ─── Initialization ────────────────────────────────────────────────────────
 
-source "$HOME/.local/share/zsh-plugins/zsh-defer.zsh"
+source "$HOME/.local/share/zsh/plugins/zsh-defer.zsh"
 eval "$(starship init zsh)"
 zsh-defer eval "$(zoxide init zsh)"
 
@@ -28,14 +28,15 @@ unset VICMD
 zsh-defer source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 zsh-defer source "/usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 zsh-defer source "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
-zsh-defer source "$HOME/.local/share/zsh-plugins/doas-prefix.zsh"
-zsh-defer source "$HOME/.local/share/zsh-plugins/dotenv.zsh"
+zsh-defer source "$HOME/.local/share/zsh/plugins/doas-prefix.zsh"
+zsh-defer source "$HOME/.local/share/zsh/plugins/dotenv.zsh"
+zsh-defer source "$HOME/.local/share/zsh/plugins/zsh-fzf-history-search.zsh"
 
 # ─── History ──────────────────────────────────────────────────────────────
 
 HISTSIZE=10000000
 SAVEHIST=10000000
-HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+HISTFILE="$HOME/.local/share/zsh/history"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
@@ -67,7 +68,7 @@ alias py="python"
 alias pyenv="source .venv/bin/activate"
 alias rswatch="cargo watch -x 'run -q'"
 alias wiki="wiki-tui"
-alias nv="nvim"
+alias open="xdg-open"
 
 alias npm="espeak 'use, fucking, pnpm, you moron!' --"
 alias sudo="espeak 'use, fucking, doas, you moron!' --"
@@ -89,6 +90,8 @@ clean(){
   flatpak uninstall --delete-data --noninteractive
   echo "\n\033[38;5;10m--- PacMan CleanUp ---\033[0m"
   paru -Sc --noconfirm
+  echo "\n\033[38;5;10m--- Cargo CleanUp ---\033[0m"
+  cargo cache --autoclean
 }
 
 upall() {
@@ -98,6 +101,8 @@ upall() {
   flatpak update --noninteractive
   echo "\n\033[38;5;10m--- AppImage Update ---\033[0m"
   imgup
+  echo "\n\033[38;5;10m--- Rust Update ---\033[0m"
+  rustup update stable
   echo "\n\033[38;5;10m--- Yazi plugins Update ---\033[0m"
   echo "..."
   yapa pack -u >/dev/null 2>&1

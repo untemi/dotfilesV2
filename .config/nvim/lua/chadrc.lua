@@ -1,59 +1,57 @@
-local options = {
+---@type ChadrcConfig
+local M = {}
+M.base46 = {
+  theme = "tokyonight",
+}
 
-  base46 = {
-    theme = "tokyonight",
-  },
+M.mason = { skip = { "rust-analyzer" } }
 
-  mason = { skip = { "rust-analyzer" } },
-
-  ui = {
-    cmp = {
-      style = "atom",
-      format_colors = {
-        tailwind = true,
-      },
-    },
-
-    telescope = { style = "borderless" },
-
-    statusline = {
-      enabled = true,
-      theme = "vscode_colored",
-      separator_style = "block",
-    },
-
-    tabufline = {
-      lazyload = false,
-      enabled = true,
-      order = { "treeOffset", "buffers" },
+M.ui = {
+  cmp = {
+    style = "atom",
+    format_colors = {
+      tailwind = true,
     },
   },
 
-  nvdash = {
-    load_on_startup = true,
-    header = {
-      " █    ██  ███▄    █ ▄▄▄█████▓▓█████  ███▄ ▄███▓ ██▓",
-      " ██  ▓██▒ ██ ▀█   █ ▓  ██▒ ▓▒▓█   ▀ ▓██▒▀█▀ ██▒▓██▒",
-      "▓██  ▒██░▓██  ▀█ ██▒▒ ▓██░ ▒░▒███   ▓██    ▓██░▒██▒",
-      "▓▓█  ░██░▓██▒  ▐▌██▒░ ▓██▓ ░ ▒▓█  ▄ ▒██    ▒██ ░██░",
-      "▒▒█████▓ ▒██░   ▓██░  ▒██▒ ░ ░▒████▒▒██▒   ░██▒░██░",
-      "░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒   ▒ ░░   ░░ ▒░ ░░ ▒░   ░  ░░▓  ",
-      "░░▒░ ░ ░ ░ ░░   ░ ▒░    ░     ░ ░  ░░  ░      ░ ▒ ░",
-      " ░░░ ░ ░    ░   ░ ░   ░         ░   ░      ░    ▒ ░",
-      "   ░              ░             ░  ░       ░    ░  ",
-      "                                                   ",
-      "                                                   ",
-    },
+  telescope = { style = "borderless" },
 
-    buttons = {
-      { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
-      { txt = "  Zoxide", keys = "fd", cmd = "Telescope zoxide list" },
-      { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
-      { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
-      { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
-    },
+  statusline = {
+    enabled = true,
+    theme = "vscode_colored",
+    separator_style = "block",
+  },
+
+  tabufline = {
+    lazyload = false,
+    enabled = true,
+    order = { "treeOffset", "buffers" },
   },
 }
 
-local status, chadrc = pcall(require, "chadrc")
-return vim.tbl_deep_extend("force", options, status and chadrc or {})
+M.nvdash = {
+  load_on_startup = true,
+  header = {
+    " █    ██  ███▄    █ ▄▄▄█████▓▓█████  ███▄ ▄███▓ ██▓",
+    " ██  ▓██▒ ██ ▀█   █ ▓  ██▒ ▓▒▓█   ▀ ▓██▒▀█▀ ██▒▓██▒",
+    "▓██  ▒██░▓██  ▀█ ██▒▒ ▓██░ ▒░▒███   ▓██    ▓██░▒██▒",
+    "▓▓█  ░██░▓██▒  ▐▌██▒░ ▓██▓ ░ ▒▓█  ▄ ▒██    ▒██ ░██░",
+    "▒▒█████▓ ▒██░   ▓██░  ▒██▒ ░ ░▒████▒▒██▒   ░██▒░██░",
+    "░▒▓▒ ▒ ▒ ░ ▒░   ▒ ▒   ▒ ░░   ░░ ▒░ ░░ ▒░   ░  ░░▓  ",
+    "░░▒░ ░ ░ ░ ░░   ░ ▒░    ░     ░ ░  ░░  ░      ░ ▒ ░",
+    " ░░░ ░ ░    ░   ░ ░   ░         ░   ░      ░    ▒ ░",
+    "   ░              ░             ░  ░       ░    ░  ",
+    "                                                   ",
+    "                                                   ",
+  },
+
+  buttons = {
+    { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
+    { txt = "  Zoxide", keys = "fd", cmd = "Telescope zoxide list" },
+    { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
+    { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
+    { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
+  },
+}
+
+return M
