@@ -137,7 +137,7 @@
   },
 
   "custom/genshinresin": {
-    "format": "<span color='#7aa2f7' rise='-500' font='10'>&#xf186;  </span>{}",
+    "format": "<span color='#7aa2f7' rise='-500' font='10'>&#xf186; </span>{}",
     "exec": "~/Scripts/genshin.sh resin",
     "return-type": "json",
     "interval": 200,

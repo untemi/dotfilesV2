@@ -5,7 +5,6 @@ end
 require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
-  "emmet_language_server",
   "html",
   "tailwindcss",
   "svelte",

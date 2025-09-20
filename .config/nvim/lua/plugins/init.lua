@@ -2,6 +2,15 @@ return {
   { import = "nvchad.blink.lazyspec" },
 
   {
+    "piersolenski/wtf.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {},
+  },
+
+  {
     "kdheepak/lazygit.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = { { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } },

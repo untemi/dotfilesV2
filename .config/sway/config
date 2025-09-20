@@ -41,6 +41,8 @@ bar {
   swaybar_command waybar
 }
 
+primary_selection disabled
+
 ### Input configuration
 input type:keyboard {
   xkb_layout gb
@@ -90,6 +92,9 @@ bindsym $mod+z exec rofi -show calc -modi calc -no-show-match -no-sort
 bindsym $mod+v exec rofi -modi clipboard:~/Scripts/cliphist-rofi.sh -show clipboard
 bindsym $mod+x exec bzmenu -l rofi
 bindsym $mod+delete exec pidof wlogout || wlogout -b 5
+
+# no alt+f4
+bindsym Alt+F4 nop
 
 ### Actions
 # close
@@ -189,8 +194,8 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec albert
 exec nm-applet
 exec udiskie -t
-exec vesktop --start-minimized
-# exec thunderbird
+# exec flatpak run dev.vencord.Vesktop -- --start-minimized --ozone-platform-hint=auto --disable-features=UseSkiaRenderer
+exec webcord --start-minimized --enable-features=AcceleratedVideoDecodeLinuxZeroCopyGL,AcceleratedVideoDecodeLinuxGL
 exec keepassxc
 
 
