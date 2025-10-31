@@ -11,7 +11,6 @@ if [[ $binpath == "" ]]; then
   exit
 fi
 
-
 if ! [ -f "$binpath" ]; then
   echo "$0: $binpath: No such file or directory"
   exit
@@ -20,6 +19,6 @@ fi
 libraries=($(readelf -d "$binpath" | grep NEEDED | sed -n 's/.*\[\(.*\)\].*/\1/p'))
 
 for lib in "${libraries[@]}"; do
-    echo -e "\n${C_NAVY}Choices for library: $lib ${NO_FORMAT}"
-    pacman -Fq "$lib"
+  echo -e "\n${C_NAVY}Choices for library: $lib ${NO_FORMAT}"
+  pacman -Fq "$lib"
 done

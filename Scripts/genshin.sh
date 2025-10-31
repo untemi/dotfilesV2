@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 get_notes() {
   curl --silent --request GET \
-       --url "https://bbs-api-os.hoyoverse.com/game_record/genshin/api/dailyNote?server=os_euro&role_id=$GENSHIN_UID" \
-       --cookie "ltoken_v2=$HOYO_TOKEN; ltuid_v2=$HOYO_LTUID;"
+    --url "https://bbs-api-os.hoyoverse.com/game_record/genshin/api/dailyNote?server=os_euro&role_id=$GENSHIN_UID" \
+    --cookie "ltoken_v2=$HOYO_TOKEN; ltuid_v2=$HOYO_LTUID;"
 }
 
 resin() {
@@ -25,10 +25,10 @@ resin() {
 }
 
 case "$1" in
-  resin)
-    resin
-    ;;
-  *)
-    echo "Usage: $0 resin"
-    ;;
+resin)
+  resin
+  ;;
+*)
+  echo "Usage: $0 resin"
+  ;;
 esac

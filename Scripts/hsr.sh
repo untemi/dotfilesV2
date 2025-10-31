@@ -12,11 +12,11 @@ gen_ds() {
 get_notes() {
   DS=$(gen_ds)
   curl --silent --request GET \
-       --url "https://bbs-api-os.hoyoverse.com/game_record/hkrpg/api/note?server=prod_official_eur&role_id=$HSR_UID" \
-       --header 'x-rpc-app_version: 1.5.0' \
-       --header 'x-rpc-client_type: 5' \
-       --header "ds: $DS" \
-       --cookie "ltoken_v2=$HOYO_TOKEN; ltuid_v2=$HOYO_LTUID;"
+    --url "https://bbs-api-os.hoyoverse.com/game_record/hkrpg/api/note?server=prod_official_eur&role_id=$HSR_UID" \
+    --header 'x-rpc-app_version: 1.5.0' \
+    --header 'x-rpc-client_type: 5' \
+    --header "ds: $DS" \
+    --cookie "ltoken_v2=$HOYO_TOKEN; ltuid_v2=$HOYO_LTUID;"
 }
 
 power() {
@@ -38,13 +38,13 @@ power() {
 }
 
 case "$1" in
-  power)
-    power
-    ;;
-  ds)
-    gen_ds
-    ;;
-  *)
-    echo "Usage: $0 power"
-    ;;
+power)
+  power
+  ;;
+ds)
+  gen_ds
+  ;;
+*)
+  echo "Usage: $0 power"
+  ;;
 esac

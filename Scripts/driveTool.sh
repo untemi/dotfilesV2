@@ -11,10 +11,10 @@ selected=$(echo -e $menu | bemenu -H 26 --cw 2 --ch 14 --hp 10 -i \
   --hb="#7aa2f7" --hf="#1a1b26")
 
 mountfnc() {
-  driveList=$(lsblk -rpo NAME,LABEL,MOUNTPOINT --noheadings \
-    | cut -d' ' -f1,2,3 --output-delimiter=", " \
-    | awk '$1 != "" && $2 !="," && $2 !="" && $3 == ""' \
-    | sed 's/,//g')
+  driveList=$(lsblk -rpo NAME,LABEL,MOUNTPOINT --noheadings |
+    cut -d' ' -f1,2,3 --output-delimiter=", " |
+    awk '$1 != "" && $2 !="," && $2 !="" && $3 == ""' |
+    sed 's/,//g')
 
   if [[ $driveList == "" ]]; then
     notify-send "No drive to mount" -i "$notificationIco"
@@ -27,8 +27,8 @@ mountfnc() {
     --fb="#1a1b26" \
     --nb="#1a1b26" --nf="#C5C8C6" \
     --ab="#1a1b26" --af="#C5C8C6" \
-    --hb="#7aa2f7" --hf="#1a1b26" \
-    | awk '{print $1}' )
+    --hb="#7aa2f7" --hf="#1a1b26" |
+    awk '{print $1}')
 
   if [[ $selectedD == "" ]]; then
     exit
@@ -38,16 +38,15 @@ mountfnc() {
 }
 
 unmountfnc() {
-  driveList=$(lsblk -rpo NAME,LABEL,MOUNTPOINT --noheadings \
-    | cut -d' ' -f1,2,3 --output-delimiter=", " \
-    | awk '$1 != "" && $2 !="," && $2 !="" && $3 != ""' \
-    | sed 's/,//g' | awk '{print $1, $2}')
+  driveList=$(lsblk -rpo NAME,LABEL,MOUNTPOINT --noheadings |
+    cut -d' ' -f1,2,3 --output-delimiter=", " |
+    awk '$1 != "" && $2 !="," && $2 !="" && $3 != ""' |
+    sed 's/,//g' | awk '{print $1, $2}')
 
   if [[ $driveList == "" ]]; then
     notify-send "No drive to umount" -i "$notificationIco"
     exit
   fi
-
 
   selectedD=$(echo "$driveList" | bemenu -H 26 --cw 2 --ch 14 --hp 10 -i \
     -p "Select Drive" --fn 'scientifica' \
@@ -55,8 +54,8 @@ unmountfnc() {
     --fb="#1a1b26" \
     --nb="#1a1b26" --nf="#C5C8C6" \
     --ab="#1a1b26" --af="#C5C8C6" \
-    --hb="#7aa2f7" --hf="#1a1b26" \
-    | awk '{print $1}' )
+    --hb="#7aa2f7" --hf="#1a1b26" |
+    awk '{print $1}')
 
   if [[ $selectedD == "" ]]; then
     exit
@@ -67,16 +66,15 @@ unmountfnc() {
 }
 
 powerofffnc() {
-  driveList=$(lsblk -rpo NAME,LABEL,MOUNTPOINT --noheadings \
-    | cut -d' ' -f1,2,3 --output-delimiter=", " \
-    | awk '$1 != "" && $2 !="," && $2 !=""' \
-    | sed 's/,//g' | awk '{print $1, $2}')
+  driveList=$(lsblk -rpo NAME,LABEL,MOUNTPOINT --noheadings |
+    cut -d' ' -f1,2,3 --output-delimiter=", " |
+    awk '$1 != "" && $2 !="," && $2 !=""' |
+    sed 's/,//g' | awk '{print $1, $2}')
 
   if [[ $driveList == "" ]]; then
     notify-send "No drive to poweroff" -i "$notificationIco"
     exit
   fi
-
 
   selectedD=$(echo "$driveList" | bemenu -H 26 --cw 2 --ch 14 --hp 10 -i \
     -p "Select Drive" --fn 'scientifica' \
@@ -98,8 +96,8 @@ powerofffnc() {
 }
 
 case $selected in
-  mount) mountfnc ;;
-  unmount) unmountfnc ;;
-  poweroff) powerofffnc ;;
-  *) echo "got" "$selected" ;;
+mount) mountfnc ;;
+unmount) unmountfnc ;;
+poweroff) powerofffnc ;;
+*) echo "got" "$selected" ;;
 esac

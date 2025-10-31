@@ -9,6 +9,8 @@ local options = {
 
     toml = { "taplo" },
     yaml = { "yamlfmt" },
+    bash = { "shfmt" },
+    sh = { "shfmt" },
 
     htmldjango = { "prettierd" },
     html = { "biome", "rustywind" },

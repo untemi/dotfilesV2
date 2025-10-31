@@ -167,6 +167,48 @@ function git-init() {
   git branch -M main
 }
 
+function twitch() {
+  if [[ -z "$1" ]]; then
+    echo "eeh, what?? who tf are you going to watch ??"
+    return
+  fi
+  name="$1"
+
+  if [[ -z "$2" ]]; then
+    quality="720p60"
+  else
+    quality="$2"
+  fi
+
+  streamlink \
+    https://www.twitch.tv/$name \
+    $quality \
+    -p mpv \
+    --twitch-low-latency \
+    --player-args="--loop-playlist=inf --loop-file=inf"
+}
+
+function kick() {
+  if [[ -z "$1" ]]; then
+    echo "eeh, what?? who tf are you going to watch ??"
+    return
+  fi
+  name="$1"
+
+  if [[ -z "$2" ]]; then
+    quality="720p60"
+  else
+    quality="$2"
+  fi
+
+  streamlink \
+    https://kick.com/$name \
+    $quality \
+    -p mpv \
+    --kick-low-latency \
+    --player-args="--loop-playlist=inf --loop-file=inf"
+}
+
 function clear_and_refresh() {
   clear
   zle reset-prompt
