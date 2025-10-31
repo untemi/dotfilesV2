@@ -1,18 +1,22 @@
 local options = {
   formatters_by_ft = {
+    rust = { "rustfmt" },
     lua = { "stylua" },
-    css = { "prettierd" },
-    javascript = { "prettierd" },
-    json = { "prettierd" },
-    jsonc = { "prettierd" },
-    htmldjango = { "prettierd" },
-    html = { "prettierd", "rustywind" },
     go = { "gofumpt", "goimports-reviser", "golines" },
-    templ = { "templ" },
+    python = { "ruff" },
+    javascript = { "biome" },
+    typescriptreact = { "biome" },
+
     toml = { "taplo" },
     yaml = { "yamlfmt" },
-    python = { "ruff" },
-    rust = { "rustfmt" },
+
+    htmldjango = { "prettierd" },
+    html = { "biome", "rustywind" },
+    templ = { "templ" },
+
+    css = { "biome" },
+    json = { "biome" },
+    jsonc = { "biome" },
   },
 
   format_on_save = {

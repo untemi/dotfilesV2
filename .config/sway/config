@@ -206,6 +206,7 @@ workspace 10 gaps inner 0
 for_window [app_id="firefox"] move to workspace 1
 for_window [app_id="brave-browser"] move to workspace 1
 for_window [app_id="vivaldi-stable"] move to workspace 1
+for_window [app_id="helium"] move to workspace 1
 for_window [class="Brave-browser"] move to workspace 1
 for_window [class="Vivaldi-stable"] move to workspace 1
 for_window [app_id="thunderbird"] move to workspace 10
@@ -215,6 +216,7 @@ for_window [app_id="zen"] border none
 for_window [app_id="thunderbird"] border none
 for_window [app_id="brave-browser"] border none
 for_window [app_id="vivaldi-stable"] border none
+for_window [app_id="helium"] border none
 for_window [class="Brave-browser"] border none
 for_window [class="Vivaldi-stable"] border none
 for_window [app_id="albert"] move position 25ppt 18ppt

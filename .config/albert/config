@@ -11,10 +11,11 @@ enabled=false
 [applications]
 enabled=true
 terminal=footclient
+use_acronyms=true
 use_exec=false
 use_generic_name=false
 use_keywords=true
-use_non_localized_name=false
+use_non_localized_name=true
 
 [calculator_qalculate]
 angle_unit=2
@@ -38,6 +39,12 @@ paths=@Invalid()
 
 [hash]
 enabled=true
+
+[mediaremote]
+enabled=false
+
+[obsidian]
+enabled=false
 
 [path]
 enabled=false

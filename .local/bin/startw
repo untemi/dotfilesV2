@@ -16,4 +16,4 @@ export TERMINAL=foot
 LOG_DIR="$HOME/.local/share/sway"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/$(date '+%d-%m-%y-%H-%M-%S').log"
-exec sway > "$LOG_FILE" 2>&1
+exec dbus-run-session sway > "$LOG_FILE" 2>&1
