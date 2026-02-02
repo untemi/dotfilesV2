@@ -18,6 +18,7 @@ local servers = {
   "gdscript",
   "graphql",
   "vtsls",
+  "zls",
 }
 
 vim.lsp.enable(servers)

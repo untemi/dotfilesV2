@@ -72,7 +72,7 @@ alias open="xdg-open"
 
 alias npm="espeak 'use, fucking, pnpm, you moron!' --"
 alias sudo="espeak 'use, fucking, doas, you moron!' --"
-alias yay="espeak 'use, fucking, paru, you moron!' --"
+# alias yay="espeak 'use, fucking, paru, you moron!' --"
 
 # ─── Functions ────────────────────────────────────────────────────────────
 
@@ -105,7 +105,7 @@ upall() {
   rustup update stable
   echo "\n\033[38;5;10m--- Yazi plugins Update ---\033[0m"
   echo "..."
-  yapa pack -u >/dev/null 2>&1
+  yapa pkg upgrade >/dev/null 2>&1
   echo "done"
   echo "\n\033[38;5;10m--- Nvchad Update ---\033[0m"
   echo "..."
@@ -143,6 +143,10 @@ function osc7-pwd() {
     printf '\e]7;file://%s%s\e\' $HOST ${PWD//(#m)([^@-Za-z&-;_~])/%${(l:2::0:)$(([##16]#MATCH))}}
 }
 
+function bgrun() {
+    systemd-run --user "$@"
+}
+
 function git-com() {
   if [[ -z "$1" ]]; then
     echo "eeh, what the commit called again ??"
@@ -172,20 +176,18 @@ function twitch() {
     echo "eeh, what?? who tf are you going to watch ??"
     return
   fi
+
   name="$1"
+  quality="${2:-720p60}"
 
-  if [[ -z "$2" ]]; then
-    quality="720p60"
-  else
-    quality="$2"
-  fi
-
-  streamlink \
+  bgrun streamlink \
     https://www.twitch.tv/$name \
     $quality \
     -p mpv \
     --twitch-low-latency \
     --player-args="--loop-playlist=inf --loop-file=inf"
+
+  bgrun com.chatterino.chatterino -c $name
 }
 
 function kick() {
@@ -194,19 +196,17 @@ function kick() {
     return
   fi
   name="$1"
+  quality="${2:-720p60}"
 
-  if [[ -z "$2" ]]; then
-    quality="720p60"
-  else
-    quality="$2"
-  fi
-
-  streamlink \
+  bgrun streamlink \
     https://kick.com/$name \
     $quality \
     -p mpv \
     --kick-low-latency \
     --player-args="--loop-playlist=inf --loop-file=inf"
+
+  read "name?twitch chat name : "
+  bgrun com.chatterino.chatterino -c $name
 }
 
 function clear_and_refresh() {

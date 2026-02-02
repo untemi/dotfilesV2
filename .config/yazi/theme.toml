@@ -11,8 +11,8 @@ progress_label = { fg = "#1a1b26" }
 dirs = []
 prepend_conds = [{ if = "dir", text = "" }]
 
-[tabs]
-active = { fg = "#1a1b26", bg = "#7aa2f7" }
-inactive = { fg = "#7aa2f7", bg = "#414868" }
-sep_inner = { open = "", close = "" }
-sep_outer = { open = "", close = "" }
+# [tabs]
+# active = { fg = "#1a1b26", bg = "#7aa2f7" }
+# inactive = { fg = "#7aa2f7", bg = "#414868" }
+# sep_inner = { open = "", close = "" }
+# sep_outer = { open = "", close = "" }

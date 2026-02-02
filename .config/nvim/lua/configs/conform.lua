@@ -1,8 +1,9 @@
 local options = {
   formatters_by_ft = {
     rust = { "rustfmt" },
-    lua = { "stylua" },
     go = { "gofumpt", "goimports-reviser", "golines" },
+    zig = { "zigfmt" },
+    lua = { "stylua" },
     python = { "ruff" },
     javascript = { "biome" },
     typescriptreact = { "biome" },

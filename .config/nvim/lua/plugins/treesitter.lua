@@ -30,6 +30,7 @@ return {
         "hyprlang",
         "comment",
         "tera",
+        "zig",
       },
     },
   },

@@ -194,8 +194,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec albert
 exec nm-applet
 exec udiskie -t
-# exec flatpak run dev.vencord.Vesktop -- --start-minimized --ozone-platform-hint=auto --disable-features=UseSkiaRenderer
-exec webcord --start-minimized --enable-features=AcceleratedVideoDecodeLinuxZeroCopyGL,AcceleratedVideoDecodeLinuxGL
+exec flatpak run dev.vencord.Vesktop -- --start-minimized --ozone-platform-hint=auto --enable-features=AcceleratedVideoDecodeLinuxZeroCopyGL,AcceleratedVideoDecodeLinuxGL
 exec keepassxc
 
 
@@ -219,7 +218,7 @@ for_window [app_id="vivaldi-stable"] border none
 for_window [app_id="helium"] border none
 for_window [class="Brave-browser"] border none
 for_window [class="Vivaldi-stable"] border none
-for_window [app_id="albert"] move position 25ppt 18ppt
+for_window [app_id="albert"] move position 20ppt 18ppt
 
 for_window [app_id="org.qbittorrent.qBittorrent"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
