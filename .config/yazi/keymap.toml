@@ -5,5 +5,5 @@ prepend_keymap = [
   ], run = "plugin max-preview" },
   { on = [
     "<C-n>",
-  ], run = """shell 'dragon-drop -x -i -T "$@"'""" },
+  ], run = """shell 'dragon-drop -T -A -x "$@"'""" },
 ]

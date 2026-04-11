@@ -5,44 +5,43 @@ end
 require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
-  "html",
-  "tailwindcss",
-  "svelte",
-  "templ",
-  "taplo",
-  "gopls",
-  "rust_analyzer",
-  "hyprls",
-  "pyright",
-  "slint_lsp",
-  "gdscript",
-  "graphql",
-  "vtsls",
-  "zls",
-}
+  svelte = {},
+  templ = {},
+  taplo = {},
+  gopls = {},
+  rust_analyzer = {},
+  hyprls = {},
+  pyright = {},
+  slint_lsp = {},
+  gdscript = {},
+  graphql = {},
+  vtsls = {},
+  zls = {},
 
-vim.lsp.enable(servers)
-
-vim.lsp.config.html = {
-  filetypes = { "html", "templ", "htmldjango" },
-}
-
-vim.lsp.emmet_language_server = {
-  filetypes = { "html", "templ", "htmldjango" },
-}
-
-vim.lsp.tailwindcss = {
-  settings = {
-    tailwindCSS = {
-      files = {
-        exclude = {
-          "**/.git/**",
-          "**/node_modules/**",
-          "**/.hg/**",
-          "**/.svn/**",
-          "**/target/**",
+  html = {
+    filetypes = { "html", "templ", "htmldjango" },
+  },
+  emmet_language_server = {
+    filetypes = { "html", "templ", "htmldjango" },
+  },
+  tailwindcss = {
+    settings = {
+      tailwindCSS = {
+        files = {
+          exclude = {
+            "**/.git/**",
+            "**/node_modules/**",
+            "**/.hg/**",
+            "**/.svn/**",
+            "**/target/**",
+          },
         },
       },
     },
   },
 }
+
+for name, opts in pairs(servers) do
+  vim.lsp.config(name, opts)
+  vim.lsp.enable(name)
+end

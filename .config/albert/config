@@ -114,6 +114,7 @@ action_item_selection_border_width=0
 alwaysOnTop=true
 clearOnHide=true
 clientShadow=true
+darkStyle=
 darkTheme=
 disable_input_method=true
 displayScrollbar=false

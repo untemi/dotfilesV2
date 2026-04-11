@@ -62,7 +62,6 @@ alias wsong="yt-dlp --audio-format mp3 -x"
 alias goclean="\rm /tmp/go-build* -r"
 alias pyenvrun="~/Development/Python/env/bin/python"
 alias yapa="/usr/bin/ya"
-alias imgup="~/.local/appimage/appimageupdatetool-x86_64.AppImage ~/.local/appimage/* -r"
 alias x="chmod +x"
 alias py="python"
 alias pyenv="source .venv/bin/activate"
@@ -99,8 +98,6 @@ upall() {
   paru -Syu --noconfirm
   echo "\n\033[38;5;10m--- Flatpak Update ---\033[0m"
   flatpak update --noninteractive
-  echo "\n\033[38;5;10m--- AppImage Update ---\033[0m"
-  imgup
   echo "\n\033[38;5;10m--- Rust Update ---\033[0m"
   rustup update stable
   echo "\n\033[38;5;10m--- Yazi plugins Update ---\033[0m"

@@ -1,6 +1,4 @@
 return {
-  { import = "nvchad.blink.lazyspec" },
-
   {
     "piersolenski/wtf.nvim",
     dependencies = {
@@ -52,12 +50,12 @@ return {
     cmd = { "UndotreeToggle" },
   },
 
-  {
-    "m4xshen/hardtime.nvim",
-    lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
-  },
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   lazy = false,
+  --   dependencies = { "MunifTanjim/nui.nvim" },
+  --   opts = {},
+  -- },
 
   {
     "rcarriga/nvim-notify",
