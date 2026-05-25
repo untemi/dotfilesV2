@@ -1,22 +1,22 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "babfd0f"
-hash = "6fa6a05a81c98dd000fbca3cca6e9682"
+rev = "be524fb"
+hash = "7b625412411be411153886894d9acaf"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mime-ext"
-rev = "babfd0f"
-hash = "31994c9caec5bdcafd994e9b00c632a4"
+rev = "be524fb"
+hash = "2678c84a0b3a0b22504e918ccaf99011"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "49f5ab7"
-hash = "3b9ca58d8963d7213532d155340e0244"
+rev = "4f80288"
+hash = "ae6421df5eb7571bd77ebdbf0a699e93"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "babfd0f"
-hash = "26db011a778f261d730d4f5f8bf24b3f"
+rev = "be524fb"
+hash = "88e56a64b7ce7c4314427452343fef17"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
