@@ -20,7 +20,7 @@ set $laptop eDP-1
 
 ## Config
 # output HDMI-A-1 mode 1920x1080@100Hz bg ~/Pictures/Wallpapers/zelda.png fill allow_tearing yes max_render_time off
-output eDP-1 bg ~/Pictures/Wallpapers/zelda-res.png fill allow_tearing yes max_render_time off
+output eDP-1 bg ~/Pictures/Wallpapers/pleiades-watchtower-1.png fill allow_tearing yes max_render_time off
 
 client.focused          #1a1b26 #7aa2f7 #7aa2f7 #7aa2f7
 client.focused_inactive #1a1b26 #565f89 #565f89 #565f89
@@ -93,6 +93,7 @@ bindsym $mod+z exec rofi -show calc -modi calc -no-show-match -no-sort
 bindsym $mod+v exec rofi -modi clipboard:~/Scripts/cliphist-rofi.sh -show clipboard
 bindsym $mod+x exec bzmenu -l rofi
 bindsym $mod+delete exec pidof wlogout || wlogout -b 5
+bindsym $mod+semicolon exec rofimoji
 
 # no alt+f4
 bindsym Alt+F4 nop

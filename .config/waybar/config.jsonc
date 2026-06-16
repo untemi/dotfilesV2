@@ -16,7 +16,7 @@
     "memory",
     "backlight",
     "pulseaudio",
-    "sway/language",
+    "sway/language"
   ],
 
   "sway/workspaces": {
@@ -32,27 +32,40 @@
       "7": "五",
       "8": "七",
       "9": "九",
-      "10": "十",
-    },
+      "10": "十"
+    }
   },
 
   "sway/language": {
-    "format": "{1}",
+    "format": "{1}"
   },
 
   "tray": {
     "icon-size": 17.1,
-    "spacing": 5,
+    "spacing": 5
   },
 
   "clock": {
     "format": "{:%a, %b %d - %I:%M %p}",
     "tooltip-format": "<big>{:%A %d %B %Y\n%H:%M}</big>",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#7aa2f7'><b>{}</b></span>",
+        "days": "<span color='#C5C8C6'><b>{}</b></span>",
+        "weekdays": "<span color='#9ece6a'><b>{}</b></span>",
+        "today": "<span color='#f7567e'><b><u>{}</u></b></span>"
+      }
+    }
   },
 
   "memory": {
     "format": "<span color='#7aa2f7'>󰍛</span>  {}%",
-    "interval": 4,
+    "interval": 4
   },
 
   "backlight": {
@@ -60,13 +73,13 @@
     "format": "<span color='#f7567e' size='10pt' rise='500'>{icon}</span>  {percent}%",
     "tooltip-format": "{icon}  {percent}%",
     "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
-    "on-click": "",
+    "on-click": ""
   },
 
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15,
+      "critical": 15
     },
 
     "interval": 4,
@@ -75,7 +88,7 @@
     "format-plugged": "<span color='#7aa2f7'></span> {capacity}%",
     "format-full": "<span color='#7aa2f7'>{icon}</span> full",
 
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
 
   "pulseaudio": {
@@ -83,9 +96,9 @@
     "format": "<span color='#f7567e'>{icon}</span>  {volume}%",
     "format-muted": "󰝟  {volume}%",
     "format-icons": {
-      "default": ["󰕿", "󰖀", "󰕾"],
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
 
   "gamemode": {
@@ -97,7 +110,7 @@
     "icon-spacing": 0,
     "icon-size": 0,
     "tooltip": true,
-    "tooltip-format": "Games running: {count}",
+    "tooltip-format": "Games running: {count}"
   },
 
   "privacy": {
@@ -108,46 +121,46 @@
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 15,
+        "tooltip-icon-size": 15
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 15,
-      },
+        "tooltip-icon-size": 15
+      }
     ],
     "ignore": [
       {
         "type": "audio-in",
-        "name": "ALSA plug-in [AudioRelay]",
-      },
-    ],
+        "name": "ALSA plug-in [AudioRelay]"
+      }
+    ]
   },
 
   "disk": {
     "interval": 30,
     "format": "<span color='#7aa2f7'>󰋊</span>  {percentage_used}%",
-    "path": "/",
+    "path": "/"
   },
 
   "custom/pingo": {
     "format": "<span font='6'>{}</span>",
     "exec": "PINGOIP=1.1.1.1 pingo --no-trail -n -w -m ico --timeout 600 --retry-delay 2 --recheck-delay 4",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "custom/genshinresin": {
     "format": "<span color='#7aa2f7' rise='-500' font='10'>&#xf186; </span>{}",
     "exec": "~/Scripts/genshin.sh resin",
     "return-type": "json",
-    "interval": 200,
+    "interval": 200
   },
 
   "custom/hsrpower": {
     "format": "<span color='#7aa2f7' rise='600' font='10'>  </span>{}",
     "exec": "~/Scripts/hsr.sh power",
     "return-type": "json",
-    "interval": 200,
+    "interval": 200
   },
 
   "custom/updates": {
@@ -155,10 +168,10 @@
     "return-type": "json",
     "format-icons": {
       "has-updates": "<span color='#f7567e'>󱍷 </span>",
-      "updated": "",
+      "updated": ""
     },
 
     "exec-if": "which waybar-module-pacman-updates",
-    "exec": "waybar-module-pacman-updates --no-zero-output --interval-seconds 900 --color-semver-updates f7567e,9ece6a,7aa2f7,C5C8C6,707880",
-  },
+    "exec": "waybar-module-pacman-updates --no-zero-output --interval-seconds 900 --color-semver-updates f7567e,9ece6a,7aa2f7,C5C8C6,707880"
+  }
 }

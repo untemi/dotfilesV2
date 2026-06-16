@@ -2,7 +2,7 @@
 (
     address: "127.0.0.1:6600",
     password: None,
-    theme: Some("default"),
+    theme: Some("old"),
     cache_dir: "~/.cache/rmpc/",
     lyrics_dir: "~/Music/",
     on_song_change: None,
