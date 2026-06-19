@@ -39,7 +39,7 @@ rustup default stable
 
 # PACKAGES
 echo "Installing Software"
-paru --needed -S --noconfirm autotiling base base-devel bemenu-wayland btop cfonts cliphist dunst engrampa eza fastfetch vivaldi vivaldi-ffmpeg-codecs foot fzf git go gtklock htop hyprlock imv keepassxc kvantum kvantum-qt5 less mpc mpd mpv ncmpcpp nemo neovim vim network-manager-applet networkmanager nm-connection-editor nodejs noto-fonts noto-fonts-cjk npm nsxiv nwg-look p7zip polkit-gnome qbittorrent qt5ct qt6ct ripgrep rofi-calc rofi-wayland starship sway swaybg swayidle swayosd thunderbird otf-font-awesome ttf-jetbrains-mono-nerd ttf-ubuntu-font-family udiskie unzip waybar waybar-module-pacman-updates-git wl-clip-persist wl-clipboard wlogout xdg-desktop-portal-wlr xdg-desktop-portal-gtk xdg-user-dirs xorg-xwayland yazi yt-dlp zathura zathura-cb zathura-ps zathura-djvu zathura-pdf-poppler zoxide zsh dash mdcat perl-image-exiftool pavucontrol ttf-apple-emoji xorg-xrdb tumbler ffmpegthumbnailer gamemode qt5-wayland flatpak nemo-engrampa wget fuse gtk-engine-murrine imagemagick sway-contrib slurp man-db bat at fd dragon-drop hunspell-en_US noise-suppression-for-voice pacman-contrib alsa-utils xorg-xev papirus-icon-theme ttf-ms-win10-auto gst-plugins-{base,good,bad,ugly} gst-libav zsh-autosuggestions zsh-history-substring-search zsh-fast-syntax-highlighting trashy hyprland hypridle hyprpaper luarocks wiki-tui rmpc mprocs-bin realtime-privileges doas doas-sudo-shim espeak-ng caligula aria2 tree-sitter-cli pnpm libayatana-appindicator
+paru --needed -S --noconfirm autotiling base base-devel bemenu-wayland btop cfonts cliphist dunst engrampa eza fastfetch vivaldi vivaldi-ffmpeg-codecs foot fzf git go gtklock htop hyprlock imv keepassxc kvantum kvantum-qt5 less mpc mpd mpv ncmpcpp nemo neovim vim network-manager-applet networkmanager nm-connection-editor nodejs noto-fonts noto-fonts-cjk npm nsxiv nwg-look p7zip polkit-gnome qbittorrent qt5ct qt6ct ripgrep rofi-calc rofi-wayland starship sway swaybg swayidle swayosd thunderbird otf-font-awesome ttf-jetbrains-mono-nerd ttf-ubuntu-font-family udiskie unzip waybar waybar-module-pacman-updates-git wl-clip-persist wl-clipboard wlogout xdg-desktop-portal-wlr xdg-desktop-portal-gtk xdg-user-dirs xorg-xwayland yazi yt-dlp zathura zathura-cb zathura-ps zathura-djvu zathura-pdf-poppler zoxide zsh dash mdcat perl-image-exiftool pavucontrol ttf-apple-emoji xorg-xrdb tumbler ffmpegthumbnailer gamemode qt5-wayland flatpak nemo-engrampa wget fuse gtk-engine-murrine imagemagick sway-contrib slurp man-db bat at fd dragon-drop hunspell-en_US noise-suppression-for-voice pacman-contrib alsa-utils xorg-xev papirus-icon-theme ttf-ms-win10-auto gst-plugins-{base,good,bad,ugly} gst-libav zsh-autosuggestions zsh-history-substring-search zsh-fast-syntax-highlighting trashy hyprland hypridle hyprpaper luarocks wiki-tui rmpc mprocs-bin realtime-privileges espeak-ng caligula aria2 tree-sitter-cli pnpm libayatana-appindicator
 
 echo "Adding user to realtime groupe"
 sudo gpasswd -a $USER realtime
@@ -52,12 +52,11 @@ sudo systemctl enable --now swayosd-libinput-backend.service
 sudo usermod -a -G video $USER
 
 echo "Setting up zsh history..."
-mkdir $HOME/.local/share/zsh/
+mkdir -p $HOME/.local/share/zsh/
 touch $HOME/.local/share/zsh/history
 
 echo "Setting up mpd..."
-mkdir .local/share/mpd
-mkdir .local/share/mpd/playlists
+mkdir -p .local/share/mpd/playlists
 
 echo "Setting dash as default system shell..."
 sudo rm /usr/bin/sh
@@ -77,3 +76,7 @@ xdg-user-dirs-update
 
 echo "disabling middle click paste..."
 gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
+
+echo "setting up doas"
+paru -S doas doasedit-alternative doas-sudo-shim
+echo 'permit persist setenv {PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin} :wheel' | doas tee /etc/doas.conf >/dev/null
