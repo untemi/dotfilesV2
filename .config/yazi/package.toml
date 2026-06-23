@@ -1,11 +1,11 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "b9946d9"
+rev = "38efe09"
 hash = "7b625412411be411153886894d9acaf"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mime-ext"
-rev = "b9946d9"
+rev = "38efe09"
 hash = "2678c84a0b3a0b22504e918ccaf99011"
 
 [[plugin.deps]]
@@ -15,7 +15,7 @@ hash = "f3970de915c038d09fecf8d93d156fba"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "b9946d9"
+rev = "38efe09"
 hash = "88e56a64b7ce7c4314427452343fef17"
 
 [[flavor.deps]]
