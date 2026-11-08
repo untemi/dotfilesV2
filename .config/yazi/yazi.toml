@@ -13,17 +13,33 @@ max_height = 1000
 sixel_fraction = 14
 image_delay = 0
 image_filter = "Catmull-Rom"
-cache_dir = "~/.cache/yazi/"
+# cache_dir = "~/.cache/yazi/"
 ueberzug_offset = [0.5, -0.5, -0.5, -0.5]
 
 [plugin]
 prepend_previewers = [
   { mime = "{audio}/*", run = "mediainfo" },
   { mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run = "ouch --archive-icon=' '" },
+  { mime = "*executable*", run = "exiftool" },
+
+  # Allmytoes doesn't handle these by default
+  { mime = "image/svg+xml", run = "magick" },
+  { mime = "image/heic", run = "magick" },
+  { mime = "image/jxl", run = "magick" },
+  # Handle other image types with allmytoes
+  { mime = "image/*", run = "allmytoes" },
 ]
 prepend_preloaders = [
   { mime = "{audio}/*", run = "mediainfo" },
   { mime = "application/subrip", run = "mediainfo" },
+
+  # Allmytoes doesn't handle these by default
+  { mime = "image/svg+xml", run = "magick" },
+  { mime = "image/heic", run = "magick" },
+  { mime = "image/jxl", run = "magick" },
+  # Handle other image types with allmytoes
+  { mime = "image/*", run = "allmytoes" },
 ]
 prepend_fetchers = [
   { group = "git", url = "*", run = "git" },
@@ -32,4 +48,4 @@ prepend_fetchers = [
 
 
 [opener]
-open = [{ run = 'xdg-open "$@"', orphan = true, desc = "Open", for = "unix" }]
+open = [{ run = 'xdg-open %s', orphan = true, desc = "Open", for = "unix" }]

@@ -4,6 +4,10 @@ require("full-border"):setup({
 
 require("git"):setup()
 
+require("allmytoes"):setup({
+	sizes = { "n", "l", "x", "xx" },
+})
+
 function Status:name()
 	local h = self._tab.current.hovered
 	if not h then
@@ -23,3 +27,5 @@ Header:children_add(function()
 	end
 	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
 end, 500, Header.LEFT)
+
+require("osc7"):setup()

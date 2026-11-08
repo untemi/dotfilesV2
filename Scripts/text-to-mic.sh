@@ -14,5 +14,6 @@ VirtualMic=$(pactl load-module module-virtual-source source_name=virtual_mic sou
 
 while true; do
   read -p "Text to speak: " text
-  espeak "$text" --stdout | paplay -d virtual_speaker
+  espeak "$text" --stdout | paplay -d virtual_speaker &
+  espeak "$text"
 done

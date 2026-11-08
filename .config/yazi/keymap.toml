@@ -1,9 +1,9 @@
-[mgr]
-prepend_keymap = [
-  { on = [
-    "M",
-  ], run = "plugin max-preview" },
-  { on = [
-    "<C-n>",
-  ], run = """shell 'dragon-drop -T -A -x "$@"'""" },
-]
+[[mgr.prepend_keymap]]
+on = "<C-n>"
+run = 'shell --orphan -- dragon-drop -T -A -x %s'
+desc = "Drag and drop selected files"
+
+[[mgr.prepend_keymap]]
+on = ["C"]
+run = "plugin ouch"
+desc = "Compress with ouch"

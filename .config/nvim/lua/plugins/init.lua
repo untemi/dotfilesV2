@@ -76,14 +76,6 @@ return {
   },
 
   {
-    "mistweaverco/kulala.nvim",
-    ft = { "http" },
-    opts = {
-      global_keymaps = true,
-    },
-  },
-
-  {
     "nvzone/typr",
     dependencies = "nvzone/volt",
     opts = {},

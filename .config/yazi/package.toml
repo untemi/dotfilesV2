@@ -1,22 +1,42 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "6f26ae0"
-hash = "f281261ff04ad7ec867c3f802a50835f"
+rev = "c0529fc"
+hash = "17ebde15c4349f90aedbc45984b98db2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mime-ext"
-rev = "6f26ae0"
-hash = "94d994483dd84ddb2a47a52b59feaae6"
+rev = "c0529fc"
+hash = "7d3b7f99e600fd7e77ebc5eb8423a897"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "e079a00"
-hash = "8dd8bc3484547390ba50dfa58d7436b0"
+rev = "f1cec0b"
+hash = "88ff9c34996a06d1e49eedfe50fd33b3"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "6f26ae0"
-hash = "ce345e7e8baed03a2561b314fa85e59a"
+rev = "c0529fc"
+hash = "347cc6b190eb0c2fd60513cc7ae37412"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "596b666"
+hash = "c2f4f4aca257dcceafa9e3b828dbf1c9"
+
+[[plugin.deps]]
+use = "AleMenon/exiftool"
+rev = "4c35573"
+hash = "44ef03e4d7151fa4094dd6b87a553033"
+
+[[plugin.deps]]
+use = "Sonico98/allmytoes"
+rev = "acdc53b"
+hash = "7bf0ed68a45144b28041affd2a334ff"
+
+[[plugin.deps]]
+use = "coder0x6675/osc7"
+rev = "ae73046"
+hash = "4f73595837992eeefcb525c0a95b92ba"
 
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
